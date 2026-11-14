@@ -35,7 +35,7 @@ export default function RsvpDialog({ open, onClose, supabase, eventIds }) {
     setLoading(true); setStatus('');
     const { error } = await supabase.from('wedding_rsvps').insert({
       full_name: form.full_name.trim(),
-      phone: form.phone.trim(),
+      phone: form.phone.trim() || null,
       attendance: form.attendance,
       adults: attending ? guests : 0,
       children: 0,
@@ -61,7 +61,7 @@ export default function RsvpDialog({ open, onClose, supabase, eventIds }) {
           <p className="eyebrow">KINDLY RESPOND</p>
           <h2 id="rsvp-title" className="dialog-title">RSVP</h2>
           <label>Full name <b>*</b><input value={form.full_name} onChange={e => setField('full_name', e.target.value)} placeholder="Enter your name" required maxLength="100" autoComplete="name" /></label>
-          <label>Mobile number <b>*</b><input type="tel" value={form.phone} onChange={e => setField('phone', e.target.value)} placeholder="Your contact number" required minLength="5" maxLength="20" autoComplete="tel" /></label>
+          <label>Mobile number <span className="optional">Optional</span><input type="tel" value={form.phone} onChange={e => setField('phone', e.target.value)} placeholder="Your contact number" minLength="5" maxLength="20" autoComplete="tel" /></label>
           <fieldset>
             <legend>Will you be joining us? <b>*</b></legend>
             <div className="choice-row two">

@@ -37,3 +37,9 @@ create policy "Admins can update RSVPs"
   with check (true);
 
 -- No public update/delete policies are created.
+
+-- Phone number is no longer collected on the RSVP form.
+alter table public.wedding_rsvps alter column phone drop not null;
+alter table public.wedding_rsvps drop constraint if exists wedding_rsvps_phone_check;
+alter table public.wedding_rsvps add constraint wedding_rsvps_phone_check
+  check (phone is null or char_length(phone) between 5 and 20);
