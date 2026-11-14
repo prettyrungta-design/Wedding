@@ -3,3 +3,10 @@
 
 /* Pastel floral wedding styling */
 .event-intro{font-family:'Playfair Display',serif;font-style:italic;color:#9c8295;font-size:14px;margin:12px 0 0}.floral-corner{position:absolute;z-index:0;font-size:54px;line-height:1;opacity:.22;pointer-events:none}.floral-left{top:22px;left:20px;color:#b8879e;transform:rotate(-22deg)}.floral-right{top:22px;right:20px;color:#8da88e;transform:rotate(18deg)}.invite-card:before{border-color:#eadce5}.invite-card:after{border-color:#f3e9ee}.choice.selected{border-color:#c39aaf;background:#faf1f6;color:#795a70}.check-option:has(input:checked){border-color:#c39aaf;background:#fcf6f9}.check-option input{accent-color:#9b7b91}.bottom-note{color:#a4879a}
+
+/* RSVP button + dialog */
+.rsvp-cta{display:flex;flex-direction:column;align-items:center;gap:6px;position:relative;z-index:1;padding-bottom:22px}.rsvp-cta .muted{margin:0 0 8px}.rsvp-button{padding:15px 46px;font-size:15px;letter-spacing:2px;border-radius:40px;box-shadow:0 8px 24px #9b7b9133}
+.rsvp-dialog{width:min(440px,calc(100% - 32px));border:1px solid #eadfe4;border-radius:14px;padding:32px 26px 26px;background:#fffefc;color:#4a4643;box-shadow:0 24px 70px #5a3f5040}.rsvp-dialog::backdrop{background:#4a3a4466;backdrop-filter:blur(3px)}.rsvp-dialog .success-state{text-align:center}
+.dialog-close{position:absolute;top:12px;right:12px;border:0;background:transparent;color:#9b7b91;padding:6px;border-radius:6px;display:flex}.dialog-close:hover{background:#faf1f6}
+.dialog-title{font-family:'Playfair Display',serif;font-weight:500;font-size:30px;margin:0 0 18px;color:#564337;text-align:center}.rsvp-dialog .eyebrow{text-align:center}
+.choice-row.two{grid-template-columns:repeat(2,1fr)}.choice-row.two .choice{font-size:13px;padding:12px 8px}
