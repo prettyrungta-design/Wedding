@@ -65,9 +65,10 @@ export default function RsvpDialog({ open, onClose, supabase, eventIds }) {
           <fieldset>
             <legend>Will you be joining us? <b>*</b></legend>
             <div className="choice-row two">
-              {[['yes', 'Coming'], ['no', 'Not coming']].map(([value, label]) => (
-                <button type="button" key={value} aria-pressed={form.attendance === value} className={`choice ${form.attendance === value ? 'selected' : ''}`} onClick={() => setField('attendance', value)}>
-                  {form.attendance === value && <CheckCircle2 size={14} />} {label}
+              {[['yes', 'Joyfully Accept', 'I will be there'], ['no', 'Regretfully Decline', 'Sending love']].map(([value, label, subtext]) => (
+                <button type="button" key={value} aria-pressed={form.attendance === value} className={`choice choice-stacked ${form.attendance === value ? 'selected' : ''}`} onClick={() => setField('attendance', value)}>
+                  <span className="choice-label">{form.attendance === value && <CheckCircle2 size={14} aria-hidden="true" />} {label}</span>
+                  <span className="choice-subtext">{subtext}</span>
                 </button>
               ))}
             </div>
